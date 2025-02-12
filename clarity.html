@@ -169,19 +169,19 @@
 
         <img src="assets/images/math.png">
         <p class="caption">
-            HoT consistently improves accuracy over CoT across arithmetic tasks. Notably, HoT achieves the largest performance gains in AQUA (<span class="good">+14.64</span> for Gemini-1.5-Flash) and r-GSM (<span class="good">+12.73</span> for Gemini-1.5-Pro).  
+            HoT consistently improves accuracy over CoT across arithmetic tasks. Notably, HoT achieves the largest performance gains in AQUA (<span class="good">+14.64</span> for Gemini-1.5-Flash <img class="flash-llm" src="assets/images/models/geminiflash.png">) and r-GSM (<span class="good">+12.73</span> for Gemini-1.5-Pro <img class="llm" src="assets/images/models/gemini.png">).  
         </p>
     </div>
     <div class="container blog main">
         <img src="assets/images/qa.png">
         <p class="caption">
-            HoT demonstrates consistent accuracy improvements over CoT across QA tasks (StrategyQA, SpartQA, Date) and Reading Comprehension tasks (DROP (Break) and DROP (Cencus)). The largest gains are observed in StrategyQA (<span class="good">+15.07</span> for Llama-3.1-70B) and SpartQA (<span class="good">+11.88</span> for Gemini-1.5-Flash).
+            HoT demonstrates consistent accuracy improvements over CoT across QA tasks (StrategyQA, SpartQA, Date) and Reading Comprehension tasks (DROP (Break) and DROP (Cencus)). The largest gains are observed in StrategyQA (<span class="good">+15.07</span> for Llama-3.1-70B <img class="llm" src="assets/images/models/llama70b.png">) and SpartQA (<span class="good">+11.88</span> for Gemini-1.5-Flash <img class="flash-llm" src="assets/images/models/geminiflash.png">).
         </p>
     </div>
     <div class="container blog main">
         <img src="assets/images/logic.png">
         <p class="caption">
-            HoT outperforms CoT across the logical reasoning BBH subsets, with notable gains in Causal Judgment (<span class="good">+15.5</span> for for GPT-4o) and Five Object tasks (<span class="good">+6.00</span> for Gemini-1.5-Pro).</p>
+            HoT outperforms CoT across the logical reasoning BBH subsets, with notable gains in Causal Judgment (<span class="good">+15.5</span> for for GPT-4o <img class="llm" src="assets/images/models/openai.png">) and Five Object tasks (<span class="good">+6.00</span> for Gemini-1.5-Pro <img class="llm" src="assets/images/models/gemini.png">).</p>
     </div>
     
     <div class="container blog main">
@@ -192,7 +192,7 @@
             In Clarity, I have provided container widths with five options: <code>main</code>, <code>large</code>, <code>extra-large</code>, <code>extra-extra-large</code>, and <code>max</code>. These container layouts are designed to be responsive, automatically adjusting based on the screen size.  The default width is <code>main</code>, which is used for this blog post. Be cautious when using the <code>max</code> option, as it has zero padding. Unless you are certain of the design, it's always recommended to leave some space for visual aesthetic purposes.
         </p> -->
         <p class="text">
-            While LLMs are great at answering a wide variety of questions, it can be annoying to read through the huge blocks of text that they tend to generate. Humans frequently add color highlighting to our writing to make it easier to read, so why not allow LLMs to do the same thing?
+            LLMs are great at answering a wide variety of questions, but it can be annoying to read through the huge blocks of text that they tend to generate. Humans frequently add color highlighting to our writing to make it easier to read, so why not allow LLMs to do the same thing?
         </p>
     </div>
     <div class="container blog main">
@@ -239,7 +239,7 @@
     </div>
     <div class="container blog main">
         <p class="text">
-            For example, if the model wrapped "2 books" with the <code>fact2</code> tag in the reformatted question, it knows to then wrap any references to "2 books" in the answer with the same <code>fact2</code> tag. Then using regex and CSS, we can easily strip out these XML tags and assign a highlight color to each unique tag (see the first image under Key Takeaways for an example). 
+            For example, if the model wrapped "1 step right" with the <code>fact1</code> tag in the reformatted question, it knows to then wrap any references to "1 step right" in the answer with the same <code>fact1</code> tag. Then using regex and CSS, we can easily strip out these XML tags and assign a highlight color to each unique tag (see the first image under Key Takeaways for an example). 
         </p>
     </div>
     <div class="container blog main">
@@ -312,22 +312,22 @@
                     <tr>
                     <th>Prompt</th>
                     <th>Avg Time <br>(seconds)</th>
-                    <th>Accuracy (%)<br>LLM is Correct ✓</th>
-                    <th>Accuracy (%)<br>LLM is Incorrect ✗</th>
+                    <th>Verification Accuracy for<br>Correct LLM Responses ✓</th>
+                    <th>Verification Accuracy for<br>Incorrect LLM Responses ✗</th>
                     </tr>
                 </thead>
                 <tbody class="center">
                     <tr>
                     <td>HoT</td>
                     <td><b>47.26</b></td>
-                    <td><b>84.48 &plusmn; 20.28</b></td>
-                    <td>54.83 &plusmn; 30.13</td>
+                    <td><b>84.48% &plusmn; 20.28%</b></td>
+                    <td>54.83% &plusmn; 30.13%</td>
                     </tr>
                     <tr>
                     <td>CoT</td>
                     <td>62.38</td>
-                    <td>78.82 &plusmn; 28.26</td>
-                    <td><b>72.21 &plusmn; 21.99</b></td>
+                    <td>78.82% &plusmn; 28.26%</td>
+                    <td><b>72.21% &plusmn; 21.99%</b></td>
                     </tr>
                 </tbody>
                 </table>
@@ -454,7 +454,7 @@
             Limitations
         </h2>
         <p class="text">
-            HoT relies on few shot examples in order to demonstrate the desired output format to the LLM. On our Github, we have gathered plenty of fewshot examples that can be applied to most domains. If you have a niche task that you want to use HoT on, you must first construct fewshot examples (whether manually or through LLM generated examples). However, this could be easily alleviated in future work with a finetuned model that produces HoT responses by default. 
+            HoT relies on few shot examples in order to demonstrate the desired output format to the LLM. On our Github, we have gathered plenty of fewshot examples that can be applied to most domains. However, if you have a niche task that you want to use HoT on, you must first construct fewshot examples (whether manually or through LLM generated examples). Future work could easily alleviate this issue with a finetuned model that produces HoT responses by default. 
         </p>
     </div>
 
